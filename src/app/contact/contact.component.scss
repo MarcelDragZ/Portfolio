@@ -1,0 +1,262 @@
+.contact {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.contact_container {
+  position: absolute;
+  left: 20vw;
+  top: 10vh;
+  bottom: 10vh;
+  right: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    color: rgb(174, 41, 40);
+  }
+  h2 {
+    margin-top: -20px;
+    color: rgb(255, 255, 255);
+  }
+  .text_line {
+    height: 5px;
+    width: 55%;
+    display: flex;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    background-color: rgb(174, 41, 40);
+  }
+  span {
+    width: 70%;
+    color: white;
+  }
+}
+
+.contact_section {
+  max-width: 52%;
+  min-width: 52%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  img {
+    min-width: 350px;
+    object-fit: cover;
+  }
+}
+
+.flair_image {
+  position: absolute;
+  right: -350px;
+  bottom: -120px;
+  width: 800px;
+  z-index: -1;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  border-top: 4px solid red;
+  height: 400px;
+  width: 60vw;
+  background-color: rgb(16, 19, 22);
+}
+
+.contact_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(174, 41, 40);
+  width: 45%;
+  position: relative;
+}
+
+.contact_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45%;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.contact_select {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_input {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.contact_textarea {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.contact_button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  width: 85px;
+  margin-left: 5px;
+  border-bottom: 2px solid red;
+}
+
+input {
+  font-family: "Montserrat" !important;
+  background-color: transparent;
+  border: none;
+  width: 45%;
+  border-bottom: 1px solid white;
+  padding-bottom: 15px;
+  color: white;
+  &::placeholder {
+    font-size: 16px;
+    color: rgb(174, 41, 40);
+  }
+}
+
+textarea {
+  font-family: "Montserrat" !important;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid white;
+  resize: vertical;
+  min-height: 35px;
+  max-height: 150px;
+  color: white;
+  &::placeholder {
+    font-size: 16px;
+    color: rgb(174, 41, 40);
+  }
+}
+
+select {
+  font-family: "Montserrat" !important;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+  margin-top: 10px;
+  padding-bottom: 15px;
+}
+
+option {
+  color: rgb(255, 255, 255);
+  background-color: rgb(16, 19, 22);
+}
+
+button {
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.red {
+  color: rgb(174, 41, 40) !important;
+}
+
+.contact_links {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  :hover {
+    transition: all 0.2s ease-in-out;
+    color: rgb(174, 41, 40) !important;
+  }
+}
+
+.contact_banner {
+  width: 85%;
+}
+
+.loading-animation {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid rgb(174, 41, 40);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: spin 2s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+@media (max-width: 1100px) {
+  form {
+    height: auto;
+    flex-direction: column;
+  }
+  .contact_left {
+    margin-top: 25px;
+    width: 100%;
+  }
+
+  .contact_right {
+    align-items: center;
+    width: 100%;
+  }
+  .contact_span {
+    text-align: center;
+    margin: 20px;
+  }
+.contact_button {
+  margin-left: 26vw;
+}
+}
+
+@media (max-width: 550px) {
+  .contact_container {
+    top: 130px;
+    left: 0;
+    right: 0;
+  }
+  .contact_banner {
+    width: 75%;
+  }
+  form {
+    width: 90%;
+  }
+  .contact_button {
+    margin-left: 35vw;
+  }
+  .contact_span {
+    font-size: 15px !important;
+  }
+
+  .contact_links {
+    margin-top: 25px;
+  }
+}

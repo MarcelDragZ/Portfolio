@@ -1,0 +1,12 @@
+img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 170px;
+}
+
+@media (max-width: 550px) {
+img {
+  width: 120px;
+}
+}

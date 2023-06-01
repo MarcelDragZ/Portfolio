@@ -1,0 +1,29 @@
+<div [class.sidebarResponsive]="visibleResponsive" class="sidebar">
+  <div (click)="visibleMenuText()" class="menu_burger">
+    <img src="assets/img/navbar_menu.png" />
+  </div>
+  <div [class.responsive]="!visibleResponsive" class="menu_icons">
+    <div (click)="scrollToView('home')" class="menu">
+      <img (mouseenter)="hover('home')" (mouseleave)="hoverEnd('home')" class="menu_icon" src="assets/img/navbar_open.png" />
+      <div class="menu_text" *ngIf="home">Home</div>
+    </div>
+    <div (click)="scrollToView('about')" class="menu">
+      <img (mouseenter)="hover('about')"  (mouseleave)="hoverEnd('about')" class="menu_icon" src="assets/img/navbar_open.png" />
+      <div class="menu_text" *ngIf="about">About</div>
+    </div>
+    <div (click)="scrollToView('skills')" class="menu">
+      <img (mouseenter)="hover('skills')" (mouseleave)="hoverEnd('skills')" class="menu_icon" src="assets/img/navbar_open.png" />
+      <div class="menu_text" *ngIf="skills">Skills</div>
+    </div>
+    <div (click)="scrollToView('works')" class="menu">
+      <img (mouseenter)="hover('works')" (mouseleave)="hoverEnd('works')" class="menu_icon" src="assets/img/navbar_open.png" />
+      <div class="menu_text" *ngIf="works">Works</div>
+    </div>
+    <div (click)="scrollToView('contact')" class="menu">
+      <img (mouseenter)="hover('contact')" (mouseleave)="hoverEnd('contact')" class="menu_icon" src="assets/img/navbar_open.png" />
+      <div class="menu_text" *ngIf="contact">Contact</div>
+    </div>
+  </div>
+  <div [class.responsive]="!visibleResponsive" class="menu_footer">
+  </div>
+</div>

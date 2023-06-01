@@ -1,0 +1,16 @@
+img {
+  position: absolute;
+  left: 25vw;
+  top: 5vh;
+  bottom: 10vh;
+  right: 25vw;
+}
+
+@media (max-width: 550px) {
+  img {
+    left: 35vw;
+    object-fit: contain;
+    width: 180px;
+    z-index: 50;
+  }
+}
