@@ -1,40 +1,89 @@
 <div id="contact" class="contact">
-  <app-headline1></app-headline1>
-  <app-footer [imageSrc]="'assets/img/nav_contact.png'"></app-footer>
+<!--   <app-footer [imageSrc]="'assets/img/nav_contact.png'"></app-footer> -->
   <div class="contact_container">
     <img class="contact_banner" src="assets/img/banner_contact.png" />
-    <form (submit)="sendMail()" method="post" #myform>
+    <form method="post" #myform>
       <div *ngIf="sendingMailProgress" class="contact_left">
         <div class="sending_mail">
-          <div class="loading-animation" *ngIf="sendingMailProgress"></div>
+          <div
+            class="loader"
+            *ngIf="sendingMailProgress && !loaderFinish"
+          ></div>
+          <div class="mail_sent" *ngIf="sendingMailProgress && loaderFinish">
+            ✔️
+          </div>
         </div>
       </div>
 
       <div *ngIf="!sendingMailProgress" class="contact_left">
         <div class="contact_select">
-          <label>You need a...</label>
-          <select required #selectField>
+          <label class="label">You need a...</label>
+          <div
+            class="validation_fields"
+            *ngIf="selectControl.invalid && submitButtonClicked"
+          >
+            A selection is required.
+          </div>
+          <select [formControl]="selectControl" #selectField>
             <option value="General Inquiry">General Inquiry</option>
             <option value="Job Opportunity">Job Opportunity</option>
-            <option value="Feedback and Testimonial">Feedback and Testimonial</option>
-            <option value="Collaboration Opportunity">Collaboration Opportunity</option>
+            <option value="Feedback and Testimonial">
+              Feedback and Testimonial
+            </option>
+            <option value="Collaboration Opportunity">
+              Collaboration Opportunity
+            </option>
             <option value="Project Inquiry">Project Inquiry</option>
           </select>
         </div>
         <div class="contact_input">
-          <input required type="text" placeholder="Your name" #nameField />
-          <input required type="email" placeholder="Your Email" #emailField />
+          <div class="column">
+            <div
+              class="validation_fields"
+              *ngIf="nameControl.invalid && submitButtonClicked"
+            >
+              Name is required.
+            </div>
+            <input
+              [formControl]="nameControl"
+              type="text"
+              placeholder="Your name"
+              #nameField
+            />
+          </div>
+          <div class="column">
+            <div
+              class="validation_fields"
+              *ngIf="emailControl.invalid && submitButtonClicked"
+            >
+              Email is required.
+            </div>
+            <input
+              [formControl]="emailControl"
+              type="email"
+              placeholder="Your Email"
+              #emailField
+            />
+          </div>
         </div>
         <div class="contact_textarea">
-          <textarea
-            required
-            placeholder="Contact details"
-            rows="2"
-            #messageField
-          ></textarea>
+          <div style="width: 98%;" class="column">
+            <div
+              class="validation_fields"
+              *ngIf="messageControl.invalid && submitButtonClicked"
+            >
+              Message is required.
+            </div>
+            <textarea
+              [formControl]="messageControl"
+              placeholder="Contact details"
+              rows="2"
+              #messageField
+            ></textarea>
+          </div>
         </div>
         <div class="contact_button">
-          <button #buttonField>SEND</button>
+          <button (click)="sendMail()" #buttonField>SEND</button>
         </div>
       </div>
 
@@ -52,16 +101,18 @@
         <div class="contact_links">
           <b
             ><a href="https://github.com/MarcelDragZ" target="_blank"
-              ><img class="contact_social_media" src="assets/img/icon_github.png"></a
-            ></b
-          >
+              ><img
+                class="contact_social_media"
+                src="assets/img/icon_github.png" /></a
+          ></b>
           <b>
             <a
               href="https://www.linkedin.com/in/marcel-herzog-284722268/"
               target="_blank"
-              ><img class="contact_social_media" src="assets/img/icon_linkedin.png"></a
-            ></b
-          >
+              ><img
+                class="contact_social_media"
+                src="assets/img/icon_linkedin.png" /></a
+          ></b>
         </div>
       </div>
     </form>

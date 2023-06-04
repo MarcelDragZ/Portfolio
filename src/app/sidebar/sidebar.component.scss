@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: flex-start;
   padding-left: 15px;
-  padding-top: 60px;
+  padding-top: 30px;
   padding-right: 15px;
   z-index: 50;
 }
@@ -20,17 +20,21 @@
   height: 150px;
 }
 
+.menu_burger {
+  cursor: pointer;
+  :hover {
+filter: opacity(0.90);
+  }
+}
+
 .menu_icon {
   width: 10px;
   height: 10px;
   &:hover {
+    transition: all .2s ease-in;
     background-color: white;
     cursor: pointer;
   }
-}
-
-.menu_burger {
-  cursor: pointer;
 }
 
 .menu {
@@ -39,6 +43,11 @@
   height: 20px;
   color: white;
   cursor: pointer;
+}
+
+.background_add {
+  transition: all .2s ease-in;
+  background-color: white;
 }
 
 .menu_text {
@@ -60,12 +69,27 @@
   display: flex;
 }
 
+.menu_footer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  a {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-top: 10px;
+    &:hover {
+      color: rgb(255, 59, 59);
+    }
+  }
+}
+
 
 @media (max-width: 550px) {
   .sidebarResponsive {
     right: 0;
     z-index: 150;
-    background-color: rgb(19,23,27);
+    background-color: rgba(19, 23, 27, 1);
   }
 
   .responsive {

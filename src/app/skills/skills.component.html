@@ -1,13 +1,12 @@
 <div id="skills" class="skills">
-  <app-headline1></app-headline1>
-  <app-footer [imageSrc]="'assets/img/nav_skills.png'"></app-footer>
+<!--   <app-footer [imageSrc]="'assets/img/nav_skills.png'"></app-footer> -->
 
   <div class="skills_container">
     <div class="skills_section">
       <div (click)="changeView('frontend')" class="headline_programming_section">
         <div><h1>FRONTEND</h1></div>
-        <div><img src="assets/img/arrow_right.png" /></div>
-        <div class="read_more">Read more</div>
+<!--         <div><img src="assets/img/arrow_right.png" /></div>
+        <div class="read_more">Read more</div> -->
       </div>
 
       <div [class.d-none]="!scrollRange || !frontend" class="skill_icons">
@@ -54,7 +53,7 @@
       </div>
 
       <div class="text_line"></div>
-      <div (click)="changeView('backend')" class="headline_programming_section">
+      <!-- <div (click)="changeView('backend')" class="headline_programming_section">
         <div><h1>BACKEND</h1></div>
         <div><img src="assets/img/arrow_right.png" /></div>
         <div class="read_more">Read more</div>
@@ -67,7 +66,7 @@
         <div class="read_more">Read more</div>
       </div>
       <div [class.d-none]="!scrollRange || !fullstack" class="skill_icons red d-none">Yet to come</div>
-    </div>
+    </div> -->
     <app-headline3></app-headline3>
     <div class="skills_section">
       <img class="skills_banner mobile_view" src="assets/img/banner_skills.png" />

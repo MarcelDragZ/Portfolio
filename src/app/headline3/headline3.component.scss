@@ -6,10 +6,11 @@ div {
   width: 400px;
   color: white;
   position: absolute;
-  left: 15vw;
+  left: 5vw;
   right: 25vw;
-  top: 20px;
+  top: -260px;
   h2 {
+    color: rgb(222,46,44);
     margin-left: -30px;
   }
 }
@@ -30,14 +31,14 @@ div {
 
 @media (max-width: 550px) {
   div {
-    left: 6vw;
+    left: 0vw;
     text-align: center;
   }
 }
 
 @media (max-width: 450px) {
   div {
-    left: -0%;
+    left: -20%;
     text-align: center;
   }
   p {
@@ -47,21 +48,34 @@ div {
 
 @media (max-width: 410px) {
   div {
-    left: -5%;
+    left: -22%;
     text-align: center;
   }
 }
 
 @media (max-width: 380px) {
   div {
-    left: -10%;
+    left: -25%;
     text-align: center;
   }
 }
 
 @media (max-width: 360px) {
   div {
-    left: -13%;
+    left: -27%;
     text-align: center;
   }
 }
+
+
+@media (max-height: 800px) {
+div {
+  top: -170px;
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 13px;
+  }
+}
+  }

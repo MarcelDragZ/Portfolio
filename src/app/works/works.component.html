@@ -1,31 +1,63 @@
 <div id="works" class="works">
-  <app-headline2></app-headline2>
-  <app-footer [imageSrc]="'assets/img/nav_work.png'"></app-footer>
+<!--   <app-footer [imageSrc]="'assets/img/nav_work.png'"></app-footer> -->
   <div class="works_container">
     <div [class.scroll-height]="scrollHeight" class="works_section">
-      <div (click)="openWork('elpolloloco')" class="work">
+      <div (mouseenter)="hover('elpolloloco')" (mouseleave)="hoverEnd('elpolloloco')" class="work">
         <img src="assets/img/work_elpolloloco.png" alt="" />
-        <div class="work_headline">
+        <div class="work_headline" *ngIf="!elpolloloco">
           <div>El Pollo Loco</div>
           <div>In El Pollo Loco, players help Pepe fight off chickens using a throwable glass bottle and the ability to jump on them. It's a unique and fun game for all ages.</div>
           <div class="programming_languages">#HTML #CSS #JavaScript</div>
         </div>
+
+
+
+        <div class="work_test" *ngIf="elpolloloco">
+          <div class="card" (click)="redirect('live_elpolloloco')">Live Test</div>
+          <div class="card" (click)="redirect('github_elpolloloco')">Github</div>
+        </div>
+
+
+
       </div>
-      <div (click)="openWork('join')" class="work">
+      <div (mouseenter)="hover('join')" (mouseleave)="hoverEnd('join')" class="work">
         <img src="assets/img/work_join.png" alt="" />
-        <div class="work_headline">
+        <div class="work_headline" *ngIf="!join">
           <div>Join</div>
           <div>Join is a Kanban software that simplifies project management, optimizes workflows, and boosts productivity. With customizable boards and automated workflows, teams can track progress and collaborate seamlessly.</div>
           <div class="programming_languages">#HTML #CSS #JavaScript</div>
         </div>
+
+
+
+        <div class="work_test" *ngIf="join">
+          <div class="card" (click)="redirect('live_join')">Live Test</div>
+          <div class="card" (click)="redirect('github_join')">Github</div>
+        </div>
+
+
+
+
       </div>
-      <div (click)="openWork('ringoffire')" class="work">
-        <img src="assets/img/work_portfolio.png" alt="" />
-        <div class="work_headline">
+      <div (mouseenter)="hover('portfolio')" (mouseleave)="hoverEnd('portfolio')" class="work">
+        <img src="assets/img/work_ringoffire.png" alt="" />
+        <div class="work_headline" *ngIf="!portfolio">
           <div>Portfolio</div>
           <div>My portfolio is an Angular-powered portfolio app for showcasing skills, projects, and achievements. Boost your professional profile with stunning designs and seamless integrations. Stand out with Angular.</div>
-          <div class="programming_languages">#Angular #TypeScript</div>
+          <div class="programming_languages">#Angular #TypeScript #Firebase</div>
         </div>
+
+
+
+
+        <div class="work_test" *ngIf="portfolio">
+          <div class="card" (click)="redirect('live_ringoffire')">Live Test</div>
+          <div class="card" (click)="redirect('github_ringoffire')">Github</div>
+        </div>
+
+
+
+
       </div>
       <img class="flair_image" src="assets/img/light_home.png">
     </div>

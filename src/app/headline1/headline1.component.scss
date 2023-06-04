@@ -1,16 +1,17 @@
-img {
-  position: absolute;
-  left: 25vw;
-  top: 5vh;
-  bottom: 10vh;
-  right: 25vw;
+div {
+  position: fixed;
+  left: 100px;
+  top: 0;
+  right: 100px;
+  height: 80px;
+  z-index: 150;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
-@media (max-width: 550px) {
-  img {
-    left: 35vw;
-    object-fit: contain;
-    width: 180px;
-    z-index: 50;
-  }
+ img {
+  object-fit: contain;
+  height: 45px;
 }

@@ -1,6 +1,9 @@
 <app-sidebar></app-sidebar>
-<app-home></app-home>
-<app-about></app-about>
-<app-skills></app-skills>
-<app-works></app-works>
-<app-contact></app-contact>
+<app-headline1></app-headline1>
+<div id="scroll_height" [class.d-none]="visibleResponsive">
+  <app-home></app-home>
+  <app-about></app-about>
+  <app-skills></app-skills>
+  <app-works></app-works>
+  <app-contact></app-contact>
+</div>

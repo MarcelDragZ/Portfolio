@@ -95,6 +95,7 @@ form {
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
+  width: 103%;
 }
 
 .contact_textarea {
@@ -112,17 +113,29 @@ form {
   border-bottom: 2px solid red;
 }
 
+.validation_fields {
+  font-size: 15px;
+  color: rgb(255, 0, 0);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 45%;
+}
+
 input {
   font-family: "Montserrat" !important;
   background-color: transparent;
   border: none;
-  width: 45%;
-  border-bottom: 1px solid white;
+  width: 90%;
+  border-bottom: 1px solid rgb(174, 41, 40);
   padding-bottom: 15px;
   color: white;
   &::placeholder {
     font-size: 16px;
-    color: rgb(174, 41, 40);
+    color: rgb(255, 255, 255);
   }
 }
 
@@ -131,14 +144,14 @@ textarea {
   background-color: transparent;
   border: none;
   width: 100%;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(174, 41, 40);
   resize: vertical;
   min-height: 35px;
   max-height: 150px;
   color: white;
   &::placeholder {
     font-size: 16px;
-    color: rgb(174, 41, 40);
+    color: rgb(255, 255, 255);
   }
 }
 
@@ -146,12 +159,16 @@ select {
   font-family: "Montserrat" !important;
   background-color: transparent;
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 18px;
   font-weight: bold;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(174, 41, 40);
   margin-top: 10px;
   padding-bottom: 15px;
+}
+
+label {
+  color: white;
 }
 
 option {
@@ -191,26 +208,70 @@ button {
   width: 85%;
 }
 
-.loading-animation {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid rgb(174, 41, 40);
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
+.loader {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  animation: spin 2s linear infinite;
-  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 40%;
+  width: 100px;
+  height: 100px;
 }
 
-@keyframes spin {
+.mail_sent {
+  color: red !important;
+  position: absolute;
+  filter: sepia(1) saturate(140) hue-rotate(-5deg);
+  top: 40%;
+  left: 40%;
+  width: 200px;
+  height: 200px;
+  font-size: 80px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: scale(1);
   }
+}
+
+.loader:before , .loader:after{
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.loader:after {
+  box-shadow: 0 2px 0 #FF3D00 inset;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {  transform: rotate(0)}
+  100% { transform: rotate(360deg)}
+}
+
+.loading-animation:before , .loading-animation:after{
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.loading-animation:after {
+  box-shadow: 0 2px 0 #FF3D00 inset;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {  transform: rotate(0)}
+  100% { transform: rotate(360deg)}
 }
 
 
@@ -259,4 +320,13 @@ button {
   .contact_links {
     margin-top: 25px;
   }
+}
+
+@media (max-height: 800px) {
+.contact_container {
+  top: 0px;
+}
+.contact_banner{
+  filter:  opacity(0.2);
+}
 }

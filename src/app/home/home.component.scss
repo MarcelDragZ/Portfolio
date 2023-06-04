@@ -129,3 +129,13 @@ font-size: 25px;
     }
   }
 }
+
+@media (max-height: 800px) {
+  .home_section {
+    img {
+      margin-top: 20px;
+      object-fit: contain;
+      max-height: 280px !important;
+    }
+  }
+}
